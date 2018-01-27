@@ -1,3 +1,42 @@
+;;; show line numbers
+(setq column-number-mode t)
+(setq line-number-mode t)
+(global-linum-mode t)
+
+;; 80 column ruler
+;; (add-hook 'emacs-lisp-mode-hook (lambda ()
+;;                                   (fci-mode 1)
+;;                                   ))
+;; (defun sanityinc/fci-enabled-p () (symbol-value 'fci-mode))
+
+;; (defvar sanityinc/fci-mode-suppressed nil)
+;; (make-variable-buffer-local 'sanityinc/fci-mode-suppressed)
+
+;; (defadvice popup-create (before suppress-fci-mode activate)
+;;   "Suspend fci-mode while popups are visible"
+;;   (let ((fci-enabled (sanityinc/fci-enabled-p)))
+;;     (when fci-enabled
+;;       (setq sanityinc/fci-mode-suppressed fci-enabled)
+;;       (turn-off-fci-mode))))
+
+;; (defadvice popup-delete (after restore-fci-mode activate)
+;;   "Restore fci-mode when all popups have closed"
+;;   (when (and sanityinc/fci-mode-suppressed
+;;              (null popup-instances))
+;;     (setq sanityinc/fci-mode-suppressed nil)
+;;     (turn-on-fci-mode)))
+
+;; set background color
+(set-background-color "grey")
+
+;; full screen
+                                        ;(set-frame-position (selected-frame) 0 0)
+                                        ;(set-frame-width (selected-frame) 1366)
+                                        ;(set-frame-height (selected-frame) 768)
+
+;; hide tool bar
+                                        ;(tool-bar-mode -1)
+
 ;; -*- lexical-binding: t -*-
 (setq debug-on-error t)
 
