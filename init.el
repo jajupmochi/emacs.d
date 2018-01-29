@@ -1,7 +1,52 @@
-;;; show line numbers
+;;; package --- Summary
+;;; Commentary:
+;;; code:
+(require 'package)
+
+;; Show column number
 (setq column-number-mode t)
 (setq line-number-mode t)
 (global-linum-mode t)
+
+;; Turn on RefTeX in AUCTeX
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; Activate nice interface between RefTeX and AUCTeX
+(setq reftex-plug-into-AUCTeX t)
+
+;; So that RefTeX finds my bibliography
+(setq reftex-default-bibliography '("/media/ljia/DATA/research-repo/table of graph kernels/graphkernels.bib"))
+;; So that RefTeX also recognizes \addbibresource. Note that you
+;; can't use $HOME in path for \addbibresource but that "~"
+;; works.
+(setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
+
+;; set org
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+;; set face
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "dim gray" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "DAMA" :family "Ubuntu Mono")))))
+
+;; an inferior Python process
+(defun run-python-once ()
+  (remove-hook 'python-mode-hook 'run-python-once)
+  (run-python (python-shell-parse-command)))
+
+(add-hook 'python-mode-hook 'run-python-once)
 
 ;; 80 column ruler
 ;; (add-hook 'emacs-lisp-mode-hook (lambda ()
@@ -26,9 +71,6 @@
 ;;     (setq sanityinc/fci-mode-suppressed nil)
 ;;     (turn-on-fci-mode)))
 
-;; set background color
-(set-background-color "grey")
-
 ;; full screen
                                         ;(set-frame-position (selected-frame) 0 0)
                                         ;(set-frame-width (selected-frame) 1366)
@@ -36,6 +78,18 @@
 
 ;; hide tool bar
                                         ;(tool-bar-mode -1)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ;; -*- lexical-binding: t -*-
 (setq debug-on-error t)
