@@ -1,5 +1,6 @@
 /url/cache
 /.emacs.desktop
+/.emacs.desktop.lock    
 /auto-save-list
 /network-security.data
 /.session
@@ -49,3 +50,4 @@ site-lisp/package/
 /.uptimes.el
 /rake.cache
 /plantuml.jar
+/backups

@@ -1,6 +1,12 @@
 ;; save a list of open files in ~/.emacs.d/.emacs.desktop
-(setq desktop-path (list user-emacs-directory)
-      desktop-auto-save-timeout 600)
+(setq desktop-dirname             "~/.emacs.d/desktop/"
+      ;; desktop-base-file-name      "emacs.desktop"
+      ;; desktop-base-lock-name      "lock"
+      desktop-path                (list desktop-dirname)
+      ;; desktop-save                t
+      ;; desktop-files-not-to-save   "^$" ;reload tramp paths
+      ;; desktop-load-locked-desktop nil
+      desktop-auto-save-timeout   600)
 (desktop-save-mode 1)
 
 (defadvice desktop-read (around time-restore activate)
@@ -28,9 +34,9 @@
 (setq-default history-length 1000)
 (add-hook 'after-init-hook 'savehist-mode)
 
-(require-package 'session)
+(require 'session)
 
-(setq session-save-file (expand-file-name ".session" user-emacs-directory))
+(setq session-save-file (expand-file-name ".session" desktop-dirname))
 (setq session-name-disable-regexp "\\(?:\\`'/tmp\\|\\.git/[A-Z_]+\\'\\)")
 (setq session-save-file-coding-system 'utf-8)
 
@@ -70,3 +76,27 @@
 
 
 (provide 'init-sessions)
+
+;; Save Emacs Sessions
+;; use only one desktop
+;; (require 'desktop-recover)
+;; ;; optionallly:
+;; (setq desktop-recover-location
+;;       (desktop-recover-fixdir "$HOME/.emacs.d/")) ;; ~/.emacs.d is the default
+;; ;; Brings up the interactive buffer restore menu
+;; (desktop-recover-interactive)
+;; ;; Note that after using this menu, your desktop will be saved
+;; ;; automatically (triggered by the auto-save mechanism).
+;; ;; For finer-grained control of the frequency of desktop saves,
+;; ;; you can add the standard keybindings to your set-up:
+;; (desktop-recover-define-global-key-bindings "\C-c%")
+;; (require 'session)
+;; (add-hook 'after-init-hook 'session-initialize)
+
+;; (load "$HOME/.emacs.d/desktop-recover")
+;; (setq desktop-path '("~/.emacs.d/"))
+;; (setq desktop-dirname "~/.emacs.d/")
+;; (setq desktop-base-file-name "emacs-desktop")
+;; (desktop-save-mode 1)
+;; (setq history-length 250)
+;; (add-to-list 'desktop-globals-to-save 'file-name-history)
