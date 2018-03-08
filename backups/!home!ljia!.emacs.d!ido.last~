@@ -1,0 +1,75 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/ljia/.emacs.d/lisp/" . "unused/")
+ ("/home/ljia/.emacs.d/" . "lisp/")
+ ("/home/ljia/" . ".emacs.d/")
+ ("/media/ljia/DATA/research-repo/codes/Linlin/py-graph/pygraph/" . "utils/")
+ ("/media/ljia/DATA/research-repo/codes/Linlin/py-graph/" . "pygraph/")
+ ("/media/ljia/DATA/research-repo/codes/Linlin/" . "py-graph/")
+ ("/media/ljia/DATA/research-repo/codes/" . "Linlin/")
+ ("/media/ljia/DATA/research-repo/" . "codes/")
+ ("/media/ljia/DATA/" . "research-repo/")
+ ("/media/ljia/" . "DATA/")
+ ("/media/" . "ljia/")
+ ("/" . "media/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/ljia/.emacs.d/"
+ "/media/ljia/DATA/research-repo/codes/Linlin/py-graph/pygraph/utils/"
+ "/home/ljia/.emacs.d/lisp/"
+ "/home/ljia/.emacs.d/lisp/unused/"
+ "/home/ljia/"
+ "/media/ljia/DATA/research-repo/codes/Linlin/py-graph/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "model_selection_precomputed.py"
+ "utils.py"
+ "desktop.el"
+ "init-sessions.el"
+ ".emacs"
+ "session.el"
+ "desktop-recover.el"
+ "pair-mode.el"
+ "autopair.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/ljia/.emacs.d/" (23200 65 61635 380000) "../" "./" "auto-save-list/" "README.md" "ido.last" "snippets/" "init.el" "elpa/" ".git/" "lisp/" "history" "backups/" ".gitignore" ".emacs.desktop")
+
+ ("/media/ljia/DATA/research-repo/codes/Linlin/py-graph/pygraph/utils/" (23200 41 292356 900000) "__pycache__/" "__init__.py" "utils.py" "model_selection_precomputed.py" "graphfiles.py" "../" "./")
+
+ ("/media/ljia/" (23199 49433 813470 157000) "../" "./" "DATA/")
+
+ ("/home/ljia/.emacs.d/lisp/unused/" (23199 46275 248023 568000) "../" "init-sessions.el" "./")
+
+ ("/home/ljia/.emacs.d/lisp/" (23199 46344 580023 843000) "../" "./" "session.el" "unused/" "desktop-recover.el" "desktop.el" "pair-mode.el" "autopair.el")
+
+ ("/home/ljia/" (23199 50613 243051 634000) "../" "ls/" ".bashrc" "QQIntl_Backup_2018-01-15-1412/" "Bureau/" ".dmrc" ".viminfo" "plantuml.jar" ".adobe/" "./" ".ipython/" ".config/" "Téléchargements/" ".jupyter/" ".xinputrc" "Documents/" ".emacs.d/" "Public/" ".nano/" ".local/" ".python_history" ".ssh/" ".pam_environment" ".bash_history" ".bypy/" ".xsession-errors.old" ".vim/" ".thunderbird/" ".gconf/" "Musique/" ".compiz/" ".Xauthority" "Images/" ".texmf-var/" "*message*-20180118-151115" ".profile" ".deepinwine/" "Modèles/" "ditaa0_9.jar" ".macromedia/" ".cache/" ".mozilla/" ".ICEauthority" "examples.desktop" ".gnupg/" "Vidéos/" ".xsession-errors" ".hplip/" ".sudo_as_admin_successful" ".gitconfig" ".bash_logout")
+
+ ("/media/ljia/DATA/research-repo/codes/Linlin/" (23198 55121 553701 200000) "py-graph/" "notebooks/" "../" "./")
+
+ ("/media/ljia/DATA/research-repo/codes/Linlin/py-graph/pygraph/" (23081 6553 974653 500000) "__pycache__/" "__init__.py" "utils/" "kernels/" "../" "./")
+
+ ("/media/ljia/DATA/research-repo/codes/Linlin/py-graph/" (23197 31220 983399 700000) "README.md" "pygraph/" "notebooks/" "LICENSE" ".ipynb_checkpoints/" ".gitignore" ".git/" "../" "./")
+
+ ("/media/ljia/DATA/research-repo/codes/" (23078 28234 335199 400000) "Linlin/" "Benoit/" "../" "./")
+
+ ("/media/ljia/DATA/research-repo/" (23197 21367 585953 100000) "table.tex~" "table of graph kernels/" "README.md" "publications/" "plot_nested_cross_validation_iris_V2.py" "plot_nested_cross_validation_iris.py" "Nouveau document.el" "mon dossier de travail.md" "datasets/" "codes/" "../" "./")
+
+ ("/media/ljia/DATA/" (23098 24510 440144 100000) "System Volume Information/" "softwares/" "research-repo/" "else/" ".Trash-1000/" "../" "./")
+
+ ("/media/" (23077 3424 460001 82000) "../" "./" "ljia/")
+
+ ("/home/" (23077 2809 528000 883000) "../" "./" "ljia/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
