@@ -6,21 +6,23 @@
 ;; --------------------------------------
 
 (require 'package)
-(package-initialize)
 
 ;; add the elpy package
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
+(package-initialize)
+
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
 ;; packages for python
 (defvar myPackages
-  '(better-defaults
+  '(;; better-defaults
     ein
     elpy
     flycheck
-    material-theme
+    ;; material-theme
     py-autopep8))
 
 (mapc #'(lambda (package)
@@ -75,7 +77,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (py-autopep8 material-theme flycheck elpy ein better-defaults))))
+    (virtualenvwrapper jedi py-autopep8 material-theme flycheck elpy ein better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -91,7 +93,7 @@
 
 
 ;; ;; LaTex Configuration
-;; ;; --------------------------------------
+;com; ;; --------------------------------------
 
 ;; Turn on RefTeX in AUCTeX
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -110,12 +112,24 @@
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
 
+;; jedi, a python library for contextual parsing of files.
+(require 'jedi)
+;; hook up to autocomplete
+;; (add-to-list 'ac-sources 'ac-source-jedi-direct)
+;; enable for python-mode
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+(require 'ein)
+(require 'ein-loaddefs)
+(require 'ein-notebook)
+(require 'ein-subpackages)
 (elpy-enable)
 
 (setq python-shell-interpreter "jupyter"
       python-shell-interpreter-args "console --simple-prompt")
 
-(add-hook 'elpy-mode-hook (lambda () (elpy-shell-toggle-dedicated-shell 1)))
+;; (add-hook 'elpy-mode-hook (lambda () (elpy-shell-toggle-dedicated-shell 1)))
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)
@@ -126,7 +140,9 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-(setq python-shell-completion-native-enable nil)
+;; (setq python-shell-completion-native-enable nil)
+
+
 
 ;; ;; an inferior Python process
 ;; (defun run-python-once ()
@@ -338,7 +354,7 @@
 ;;   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
 
-;; (provide 'init)
+(provide 'init)
 
 ;; ;; Local Variables:
 ;; ;; coding: utf-8
@@ -350,5 +366,5 @@
 
 
 
-(provide '.emacs)
+;; (provide '.emacs)
 ;;; .emacs ends here
